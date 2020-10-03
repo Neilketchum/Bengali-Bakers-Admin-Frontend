@@ -1,22 +1,31 @@
 import React from 'react'
 import { Nav, Container, Navbar } from 'react-bootstrap';
-
+import { NavLink, Link } from "react-router-dom";
 export default function Header() {
     return (
         <div>
             <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
                 <Container>
-                    <Navbar.Brand href="#home">React-Bootstrap</Navbar.Brand>
+                    
+                    <Link className = "navbar-brand" to = '/'>Ecom Admin</Link>
                     <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                     <Navbar.Collapse id="responsive-navbar-nav">
                         <Nav className="mr-auto">
                          
                         </Nav>
                         <Nav>
-                            <Nav.Link href="#deets">Sign Up</Nav.Link>
-                            <Nav.Link eventKey={2} href="#memes">
+                            <li className = "nav-item">
+                            <NavLink className = "nav-link" to = '/signin'>
                                 Sign In
-                    </Nav.Link>
+                            </NavLink>
+                            </li>
+                            <li className = "nav-item">
+                                <NavLink className = "nav-link" to = 'signup'>
+                                    Sign Up
+                                </NavLink>
+                            </li>
+                           
+                           
                         </Nav>
                     </Navbar.Collapse>
                 </Container>
