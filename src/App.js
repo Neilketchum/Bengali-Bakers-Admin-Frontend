@@ -6,13 +6,15 @@ import Home from "./containers/Home/index"
 import Signin from "./containers/Signin/index"
 import Signup from "./containers/Signup/index"
 import {BrowserRouter,Route,Switch} from 'react-router-dom'
+import PrivateRoute from './components/HOC/PrivateRoute';
 
 function App() {
   return (
       <div>
         <BrowserRouter>
           <Switch>
-            <Route path = '/' exact component = {Home}/>
+            <PrivateRoute path = '/' exact component = {Home}/>
+
           </Switch>
           <Switch>
             <Route path = '/signin' exact component = {Signin}/>
